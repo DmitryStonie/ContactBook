@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ContactBook"
 include(":app")
- 
+include(":component:theme")
