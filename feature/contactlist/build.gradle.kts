@@ -25,6 +25,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":component:theme"))
+    implementation(project(":component:ui"))
+    implementation(project(":shared:contact"))
+
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
