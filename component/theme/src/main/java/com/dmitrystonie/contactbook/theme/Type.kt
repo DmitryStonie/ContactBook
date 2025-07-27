@@ -1,4 +1,4 @@
-package com.dmitrystonie.contactbook.ui.theme
+package com.dmitrystonie.contactbook.component.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

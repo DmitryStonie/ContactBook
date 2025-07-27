@@ -25,10 +25,15 @@ android {
 }
 
 dependencies {
+    implementation(project(":component:theme"))
+
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    debugImplementation(libs.ui.tooling)
+
+    implementation(libs.glide)
 }

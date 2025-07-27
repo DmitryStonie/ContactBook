@@ -1,4 +1,4 @@
-package com.dmitrystonie.contactbook.ui.theme
+package com.dmitrystonie.contactbook.component.theme
 
 import android.app.Activity
 import android.os.Build
