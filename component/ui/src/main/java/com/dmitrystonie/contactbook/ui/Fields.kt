@@ -10,7 +10,6 @@ import androidx.compose.material3.ButtonColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -53,7 +52,7 @@ fun FieldWithIconPreview() {
     )
     val mockIcon = painterResource(R.drawable.place)
     val mockDescription = "Описание"
-    val mockActions = @androidx.compose.runtime.Composable {
+    val mockActions = @Composable {
         Row {
             ActionButton(
                 modifier = Modifier.padding(end = 4.dp).size(40.dp),
