@@ -30,14 +30,16 @@ fun FieldWithIcon(
         modifier = modifier
             .clickable(true, onClick = onClick)
             .padding(horizontal = 20.dp, vertical = 10.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Title(
+            modifier = Modifier.weight(3f),
             text = text,
-            color = TextPrimary
+            color = TextPrimary,
         )
-        actions()
+        Row(modifier = Modifier.weight(1f), horizontalArrangement = Arrangement.End) {
+            actions()
+        }
     }
 }
 
@@ -55,14 +57,18 @@ fun FieldWithIconPreview() {
     val mockActions = @Composable {
         Row {
             ActionButton(
-                modifier = Modifier.padding(end = 4.dp).size(40.dp),
+                modifier = Modifier
+                    .padding(end = 4.dp)
+                    .size(40.dp),
                 onClick = { },
                 colors = mockColors,
                 iconPainter = mockIcon,
                 iconDescription = mockDescription,
             )
             ActionButton(
-                modifier = Modifier.padding(start = 4.dp).size(40.dp),
+                modifier = Modifier
+                    .padding(start = 4.dp)
+                    .size(40.dp),
                 onClick = { },
                 colors = mockColors,
                 iconPainter = mockIcon,
@@ -72,7 +78,7 @@ fun FieldWithIconPreview() {
     }
     FieldWithIcon(
         modifier = Modifier.width(600.dp),
-        text = "ул. Покрышкина, дом 92",
+        text = "ул. Покрышкина, дом 92sdfasdf",
         onClick = {},
         actions = mockActions,
     )

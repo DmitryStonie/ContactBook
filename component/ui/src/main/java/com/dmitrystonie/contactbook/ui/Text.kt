@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.dmitrystonie.contactbook.component.theme.TextPrimary
@@ -29,7 +30,9 @@ fun Title(modifier: Modifier = Modifier, text: String, color: Color){
         text = text,
         modifier = modifier,
         color = color,
-        style = titleStyle
+        style = titleStyle,
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1,
     )
 }
 
@@ -39,7 +42,9 @@ fun Text(modifier: Modifier = Modifier, text: String, color: Color){
         text = text,
         modifier = modifier,
         color = color,
-        style = textStyle
+        style = textStyle,
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1,
     )
 }
 
