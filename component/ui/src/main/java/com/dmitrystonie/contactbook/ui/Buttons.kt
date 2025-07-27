@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import com.dmitrystonie.contactbook.component.theme.BgPrimary
 import com.dmitrystonie.contactbook.component.theme.PlaceActionColor
 import com.dmitrystonie.contactbook.component.ui.R
-import java.nio.file.WatchEvent
 
 @Composable
 fun ActionButton(modifier: Modifier = Modifier, onClick: () -> Unit, colors: ButtonColors, iconPainter: Painter, iconDescription: String) {
