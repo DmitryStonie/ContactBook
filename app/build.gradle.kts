@@ -41,6 +41,10 @@ android {
 
 dependencies {
     implementation(project(":component:theme"))
+    implementation(project(":component:ui"))
+    implementation(project(":feature:contactinfo"))
+    implementation(project(":feature:contactlist"))
+    implementation(project(":shared:contact"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

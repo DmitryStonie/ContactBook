@@ -22,3 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "ContactBook"
 include(":app")
 include(":component:theme")
+include(":component:ui")
+include(":shared:contact")
+include(":feature:contactlist")
+include(":feature:contactinfo")
