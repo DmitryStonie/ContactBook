@@ -37,11 +37,14 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    //navigation
+    //JSON serialization
     implementation(libs.kotlinx.serialization.json)
 
     //network
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.kotlinxserialization)
     implementation(libs.okhttp.logginginterceptor)
+
+    //async programming
+    implementation(libs.kotlinx.coroutines.android)
 }
