@@ -19,7 +19,8 @@ import com.dmitrystonie.contactbook.ui.CircularImage
 
 @Composable
 fun ContactElement(modifier: Modifier = Modifier, imageUrl: String? = null, name: String, location: String, phone: String){
-    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically, modifier = modifier.padding(horizontal = 8.dp, vertical = 12.dp)){
+    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically, modifier = modifier
+        .padding(horizontal = 8.dp, vertical = 12.dp)){
         CircularImage(
             modifier = Modifier.size(60.dp),
             url = imageUrl,
@@ -51,6 +52,6 @@ fun ContactElementPreview(){
         modifier = Modifier.width(600.dp),
         name = "Иванов Иван Иванович",
         location = "Ленина 22, кв 91",
-        phone = "7 632 463 92 73"
+        phone = "7 632 463 92 73",
     )
 }

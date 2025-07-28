@@ -15,7 +15,34 @@ import com.dmitrystonie.contactbook.contact.domain.Street
 import com.dmitrystonie.contactbook.ui.SquareImage
 
 @Composable
-fun ContactScreen(contact: Contact) {
+fun ContactScreen(id: Int, onBackClick: () -> Unit) {
+    //remove, mock
+    val contact =
+        Contact(
+            id = 1,
+            gender = "male",
+            name = Name(
+                title = "Mr", first = "Alexander", last = "Rasmussen"
+            ),
+            location = Location(
+                street = Street(
+                    number = 1173, name = "Højstrupvej"
+                ),
+                city = "Nørrebro",
+                state = "Nordjylland",
+                country = "Denmark",
+                postcode = 33092,
+                coordinates = Coordinates(
+                    latitude = "-45.7555", longitude = "-142.1687"
+                ),
+            ),
+            birthday = "1982-07-02",
+            email = "alexander.rasmussen@example.com",
+            phone = "19924371",
+            cellphone = "26561423",
+            picture = "https://randomuser.me/api/portraits/thumb/men/19.jpg"
+        )
+
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
@@ -46,6 +73,7 @@ fun ContactScreen(contact: Contact) {
 fun ContactScreenPreview() {
     val contactMock =
         Contact(
+            id = 1,
             gender = "male",
             name = Name(
                 title = "Mr", first = "Alexander", last = "Rasmussen"
@@ -69,5 +97,8 @@ fun ContactScreenPreview() {
             picture = "https://randomuser.me/api/portraits/thumb/men/19.jpg"
         )
 
-    ContactScreen(contactMock)
+    ContactScreen(
+        id = 1,
+        onBackClick = {}
+    )
 }

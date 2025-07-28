@@ -1,5 +1,6 @@
 package com.dmitrystonie.contactbook.contactlist.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,15 +16,44 @@ import com.dmitrystonie.contactbook.contact.domain.Street
 import kotlin.collections.MutableList
 
 @Composable
-fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>) {
+fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>, onContactClick: (id: Int) -> Unit) {
+    // mock
+    val contacts = MutableList(20) {
+        Contact(
+            id = 1,
+            gender = "male",
+            name = Name(
+                title = "Mr", first = "Alexander", last = "Rasmussen"
+            ),
+            location = Location(
+                street = Street(
+                    number = 1173, name = "Højstrupvej"
+                ),
+                city = "Nørrebro",
+                state = "Nordjylland",
+                country = "Denmark",
+                postcode = 33092,
+                coordinates = Coordinates(
+                    latitude = "-45.7555", longitude = "-142.1687"
+                ),
+            ),
+            birthday = "1982-07-02",
+            email = "alexander.rasmussen@example.com",
+            phone = "19924371",
+            cellphone = "26561423",
+            picture = "https://randomuser.me/api/portraits/thumb/men/19.jpg"
+        )
+    }
     LazyColumn(modifier = modifier) {
         items(contacts) { contact ->
             ContactElement(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(true, onClick = { onContactClick(contact.id) }),
                 imageUrl = contact.picture,
                 name = "${contact.name.title} ${contact.name.first} ${contact.name.last}",
                 location = "${contact.location.street.number}, ${contact.location.street.name}",
-                phone = contact.phone
+                phone = contact.phone,
             )
         }
     }
@@ -34,6 +64,7 @@ fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>) {
 fun ContactListPreview() {
     val contactsMock = MutableList(20) {
         Contact(
+            id = 1,
             gender = "male",
             name = Name(
                 title = "Mr", first = "Alexander", last = "Rasmussen"
@@ -58,6 +89,7 @@ fun ContactListPreview() {
         )
     }
     ContactList(
-        modifier = Modifier.fillMaxSize(), contacts = contactsMock
+        modifier = Modifier.fillMaxSize(), contacts = contactsMock,
+        onContactClick = { }
     )
 }

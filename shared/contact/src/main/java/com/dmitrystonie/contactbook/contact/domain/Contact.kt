@@ -1,6 +1,7 @@
 package com.dmitrystonie.contactbook.contact.domain
 
 data class Contact(
+    val id: Int,
     val gender: String,
     val name: Name,
     val location: Location,
