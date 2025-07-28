@@ -63,8 +63,19 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //navigation
     implementation(libs.androidx.navigation.compose)
+
+    //JSON serialization
     implementation(libs.kotlinx.serialization.json)
+
+    //di
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    //network
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.kotlinxserialization)
+    implementation(libs.okhttp.logginginterceptor)
 }
