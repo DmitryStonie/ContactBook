@@ -47,6 +47,7 @@ dependencies {
     implementation(project(":feature:contactinfo"))
     implementation(project(":feature:contactlist"))
     implementation(project(":shared:contact"))
+    implementation(project(":util:date"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

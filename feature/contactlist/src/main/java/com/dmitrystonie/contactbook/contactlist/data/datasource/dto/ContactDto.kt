@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Contact(
+data class ContactDto(
     val gender: String,
     val name: Name,
     val location: Location,

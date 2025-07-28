@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ContactsResponse(
-    val results: List<Contact>, val info: Info
+    val results: List<ContactDto>, val info: Info
 )

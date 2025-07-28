@@ -30,6 +30,7 @@ dependencies {
     implementation(project(":component:theme"))
     implementation(project(":component:ui"))
     implementation(project(":shared:contact"))
+    implementation(project(":util:date"))
 
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
