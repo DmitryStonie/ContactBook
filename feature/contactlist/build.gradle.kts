@@ -50,6 +50,12 @@ dependencies {
     //async programming
     implementation(libs.kotlinx.coroutines.android)
 
+    //viewmodel
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.livedata.core.ktx)
+    implementation(libs.runtime.livedata)
+
     //database
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.compiler)
