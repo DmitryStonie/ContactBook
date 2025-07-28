@@ -36,5 +36,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    //navigation
     implementation(libs.kotlinx.serialization.json)
+
+    //network
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.kotlinxserialization)
+    implementation(libs.okhttp.logginginterceptor)
 }
