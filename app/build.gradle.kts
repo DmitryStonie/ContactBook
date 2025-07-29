@@ -47,6 +47,7 @@ dependencies {
     implementation(project(":feature:contactinfo"))
     implementation(project(":feature:contactlist"))
     implementation(project(":shared:contact"))
+    implementation(project(":shared:contactdatabase"))
     implementation(project(":util:date"))
 
     implementation(libs.androidx.core.ktx)
@@ -79,4 +80,10 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.kotlinxserialization)
     implementation(libs.okhttp.logginginterceptor)
+
+    //database
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+
 }
