@@ -17,9 +17,9 @@ import com.dmitrystonie.contactbook.contactdatabase.data.entity.ContactEntity.Co
 )
 data class CoordinatesEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Long,
     @ColumnInfo(name = CONTACT_ID_NAME, index = true)
-    val contactId: Int,
+    val contactId: Long,
     val latitude: String,
     val longitude: String,
 ) {

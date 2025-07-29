@@ -15,8 +15,8 @@ import androidx.room.PrimaryKey
     )],
 )
 data class StreetEntity(
-    @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = CONTACT_ID_NAME, index = true) val contactId: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long,
+    @ColumnInfo(name = CONTACT_ID_NAME, index = true) val contactId: Long,
     val number: Int,
     val name: String
 ) {

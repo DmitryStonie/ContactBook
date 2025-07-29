@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun ContactListScreen(
-    onContactClick: (id: Int) -> Unit,
+    onContactClick: (id: Long) -> Unit,
     viewModel: ContactsListViewModel
 ) {
     val state by viewModel.state.observeAsState()

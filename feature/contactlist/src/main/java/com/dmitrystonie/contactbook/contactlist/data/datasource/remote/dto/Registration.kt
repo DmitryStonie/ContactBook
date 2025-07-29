@@ -1,4 +1,4 @@
-package com.dmitrystonie.contactbook.contactlist.data.datasource.dto
+package com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto
 
 import kotlinx.serialization.Serializable
 

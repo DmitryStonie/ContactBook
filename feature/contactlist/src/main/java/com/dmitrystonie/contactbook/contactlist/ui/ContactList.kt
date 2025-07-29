@@ -16,7 +16,7 @@ import com.dmitrystonie.contactbook.contact.domain.Street
 import kotlin.collections.MutableList
 
 @Composable
-fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>, onContactClick: (id: Int) -> Unit) {
+fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>, onContactClick: (id: Long) -> Unit) {
     // mock
 //    val contacts = MutableList(20) {
 //        Contact(

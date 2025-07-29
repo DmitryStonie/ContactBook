@@ -21,4 +21,19 @@ class DatabaseModule {
         )
             .build()
     }
+
+    @Provides
+    fun provideContactDao(database: ContactDatabase) = database.contactDao()
+
+    @Provides
+    fun provideCoordinatesDao(database: ContactDatabase) = database.coordinatesDao()
+
+    @Provides
+    fun provideLocationDao(database: ContactDatabase) = database.locationDao()
+
+    @Provides
+    fun providePictureDao(database: ContactDatabase) = database.pictureDao()
+
+    @Provides
+    fun provideStreetDao(database: ContactDatabase) = database.streetDao()
 }

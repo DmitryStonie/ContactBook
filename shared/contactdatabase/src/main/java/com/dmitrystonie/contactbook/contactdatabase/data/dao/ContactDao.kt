@@ -16,7 +16,7 @@ interface ContactDao {
     suspend fun getById(id: Long): ContactEntity
 
     @Insert(entity = ContactEntity::class, onConflict = OnConflictStrategy.Companion.REPLACE)
-    suspend fun insert(contacts: List<ContactEntity>)
+    suspend fun insert(contact: ContactEntity): Long
 
     @Delete
     suspend fun delete(contact: ContactEntity)

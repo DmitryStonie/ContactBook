@@ -14,7 +14,7 @@ import com.dmitrystonie.contactbook.contact.domain.Street
 import com.dmitrystonie.contactbook.ui.SquareImage
 
 @Composable
-fun ContactScreen(id: Int, onBackClick: () -> Unit) {
+fun ContactScreen(id: Long, onBackClick: () -> Unit) {
 //    //remove, mock
 //    val contact =
 //        Contact(

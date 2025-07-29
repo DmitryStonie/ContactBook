@@ -1,11 +1,11 @@
-package com.dmitrystonie.contactbook.contactlist.data.converter
+package com.dmitrystonie.contactbook.contactlist.data.datasource.remote.converter
 
 import com.dmitrystonie.contactbook.contact.domain.Contact
 import com.dmitrystonie.contactbook.contact.domain.Coordinates
 import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contact.domain.Picture
 import com.dmitrystonie.contactbook.contact.domain.Street
-import com.dmitrystonie.contactbook.contactlist.data.datasource.dto.ContactDto
+import com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.ContactDto
 import com.dmitrystonie.contactbook.date.toBirthDate
 
 
@@ -23,7 +23,7 @@ fun ContactDto.toContact(): Contact{
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.dto.Location.toLocation(): Location{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Location.toLocation(): Location{
     return Location(
         street = street.toStreet(),
         city = city,
@@ -34,21 +34,21 @@ private fun com.dmitrystonie.contactbook.contactlist.data.datasource.dto.Locatio
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.dto.Coordinates.toCoordinates(): Coordinates{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Coordinates.toCoordinates(): Coordinates{
     return Coordinates(
         latitude = latitude,
         longitude = longitude
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.dto.Street.toStreet(): Street{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Street.toStreet(): Street{
     return Street(
         number = number,
         name = name
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.dto.Picture.toPicture(): Picture{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Picture.toPicture(): Picture{
     return Picture(
         largeUrl = large,
         mediumUrl = medium,

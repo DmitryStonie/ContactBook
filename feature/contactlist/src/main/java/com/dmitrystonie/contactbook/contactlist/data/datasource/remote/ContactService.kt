@@ -1,9 +1,8 @@
-package com.dmitrystonie.contactbook.contactlist.data.datasource
+package com.dmitrystonie.contactbook.contactlist.data.datasource.remote
 
-import com.dmitrystonie.contactbook.contactlist.data.datasource.dto.ContactsResponse
+import com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.ContactsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
-import javax.inject.Inject
 
 
 interface ContactService {

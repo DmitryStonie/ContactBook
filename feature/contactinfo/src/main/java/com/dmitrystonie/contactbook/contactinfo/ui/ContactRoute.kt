@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ContactRoute(
-    val contactId: Int
+    val contactId: Long
 )
