@@ -53,12 +53,14 @@ dependencies {
     //viewmodel
     implementation(libs.androidx.lifecycle.viewmodel.android)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.livedata.core.ktx)
+
+    //livedata
+    implementation(libs.androidx.runtime.livedata)
 
     //database
     ksp(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
 
     //di
     implementation(libs.dagger)

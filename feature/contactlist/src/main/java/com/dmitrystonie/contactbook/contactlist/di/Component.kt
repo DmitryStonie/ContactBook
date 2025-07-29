@@ -6,17 +6,17 @@ import dagger.BindsInstance
 import dagger.Component
 import jakarta.inject.Scope
 
-@AppScope
-@Component(modules = [ContactListModule::class, PresentationModule::class])
-interface AppComponent {
-
-    @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance context: Context): AppComponent
-    }
-
-    fun viewModelsFactory() : ViewModelFactory
-}
-
-@Scope
-annotation class AppScope
+//@AppScope
+//@Component(modules = [ContactListModule::class, PresentationModule::class])
+//interface AppComponent {
+//
+//    @Component.Factory
+//    interface Factory {
+//        fun create(@BindsInstance context: Context): AppComponent
+//    }
+//
+//    fun viewModelsFactory() : ViewModelFactory
+//}
+//
+//@Scope
+//annotation class AppScope

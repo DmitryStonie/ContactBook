@@ -13,7 +13,6 @@ import kotlin.reflect.KClass
 interface PresentationModule {
 
     @Binds
-    @AppScope
     @IntoMap
     @ViewModelKey(ContactsListViewModel::class)
     fun bindContactsViewModel (contactsViewModel: ContactsListViewModel): ViewModel

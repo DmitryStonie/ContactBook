@@ -13,34 +13,8 @@ import dagger.Provides
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
-@Module(includes = [DataModule::class])
+@Module(includes = [DataModule::class, PresentationModule::class])
 interface ContactListModule {
-
-}
-
-@Module
-interface DataModule {
-    val contactDataSource: ContactDataSource
-
-    companion object {
-        @Provides
-        fun provideContactRepositoryImpl(
-            dataSource: ContactDataSource,
-        ): ContactRepositoryImpl {
-            return ContactRepositoryImpl(
-                dataSource = dataSource
-            )
-        }
-        @Provides
-        fun provideContactService(
-            retrofit: Retrofit
-        ): ContactService {
-            return retrofit.create(ContactService::class.java)
-        }
-    }
-
-    @Binds
-    @AppScope
-    fun provideContactRepository(repository: ContactRepositoryImpl): ContactRepository
+    fun viewModelsFactory() : ViewModelFactory
 }
 

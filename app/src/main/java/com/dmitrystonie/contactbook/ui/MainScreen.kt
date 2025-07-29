@@ -11,11 +11,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
+import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListRoute
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
 
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModelFactory: ViewModelFactory) {
     val navController = rememberNavController()
 
     Scaffold { paddingValues: PaddingValues ->
@@ -28,7 +29,8 @@ fun MainScreen() {
                 ContactListScreen(
                     onContactClick = { contactId ->
                         navController.navigate(ContactRoute(contactId))
-                    }
+                    },
+                    viewModelFactory = viewModelFactory
                 )
             }
             composable<ContactRoute> {
