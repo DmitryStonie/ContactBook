@@ -18,8 +18,9 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideConverterFactory(): Converter.Factory {
-        return Json.Default.asConverterFactory(
-            "application/json; charset=UTF8".toMediaType()
+        val json = Json { isLenient = true }
+        return json.asConverterFactory(
+            "application/json; charset=UTF8;".toMediaType()
         )
     }
 

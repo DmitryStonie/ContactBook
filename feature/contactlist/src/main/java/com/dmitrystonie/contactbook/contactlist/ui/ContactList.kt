@@ -76,7 +76,7 @@ fun ContactListPreview() {
                 city = "Nørrebro",
                 state = "Nordjylland",
                 country = "Denmark",
-                postcode = 33092,
+                postcode = "33092",
                 coordinates = Coordinates(
                     latitude = "-45.7555", longitude = "-142.1687"
                 ),
