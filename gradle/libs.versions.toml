@@ -21,7 +21,6 @@ room="2.7.2"
 lifecycleViewmodelAndroid = "2.9.2"
 lifecycleViewmodelCompose = "2.9.2"
 lifecycleLivedataCoreKtx = "2.9.2"
-runtimeLivedata = "1.8.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -54,7 +53,6 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 androidx-lifecycle-livedata-core-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-core-ktx", version.ref = "lifecycleLivedataCoreKtx" }
-runtime-livedata = { group = "androidx.compose.runtime ", name = "runtime-livedata", version.ref = "lifecycleLivedataCoreKtx" }
 
 
 [plugins]

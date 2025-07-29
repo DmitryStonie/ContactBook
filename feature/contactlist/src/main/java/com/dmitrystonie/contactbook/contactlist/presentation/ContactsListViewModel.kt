@@ -3,7 +3,11 @@ package com.dmitrystonie.contactbook.contactlist.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.CreationExtras
 import com.dmitrystonie.contactbook.contactlist.domain.usecase.GetContactsListUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -31,5 +35,7 @@ class ContactsListViewModel @Inject constructor(
             }
         }
     }
+
+
 
 }
