@@ -10,4 +10,5 @@ data class Location (
     val country: String,
     val postcode: Int,
     val coordinates: Coordinates,
+    val timezone: Timezone,
 )

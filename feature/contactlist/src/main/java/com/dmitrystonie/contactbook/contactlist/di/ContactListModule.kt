@@ -15,6 +15,6 @@ import javax.inject.Singleton
 
 @Module(includes = [DataModule::class, PresentationModule::class])
 interface ContactListModule {
-    fun viewModelsFactory() : ViewModelFactory
+
 }
 

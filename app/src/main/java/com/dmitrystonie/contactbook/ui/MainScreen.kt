@@ -11,9 +11,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
+import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
 import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListRoute
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
+import kotlin.lazy
 
 @Composable
 fun MainScreen(viewModelFactory: ViewModelFactory) {
@@ -30,7 +32,8 @@ fun MainScreen(viewModelFactory: ViewModelFactory) {
                     onContactClick = { contactId ->
                         navController.navigate(ContactRoute(contactId))
                     },
-                    viewModelFactory = viewModelFactory
+                    viewModel = viewModelFactory.create(ContactsListViewModel::class.java)
+
                 )
             }
             composable<ContactRoute> {

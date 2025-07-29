@@ -15,5 +15,6 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent
     }
+
     fun viewModelsFactory() : ViewModelFactory
 }

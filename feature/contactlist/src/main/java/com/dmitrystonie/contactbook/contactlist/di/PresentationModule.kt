@@ -2,6 +2,7 @@ package com.dmitrystonie.contactbook.contactlist.di
 
 import androidx.lifecycle.ViewModel
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
+import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
 import dagger.Binds
 import dagger.Component
 import dagger.MapKey

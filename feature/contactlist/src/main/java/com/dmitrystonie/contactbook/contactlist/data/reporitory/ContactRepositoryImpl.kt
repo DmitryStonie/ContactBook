@@ -1,5 +1,6 @@
 package com.dmitrystonie.contactbook.contactlist.data.reporitory
 
+import android.util.Log
 import com.dmitrystonie.contactbook.contact.domain.Contact
 import com.dmitrystonie.contactbook.contactlist.data.converter.toContact
 import com.dmitrystonie.contactbook.contactlist.data.datasource.ContactDataSource
