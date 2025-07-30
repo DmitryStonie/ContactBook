@@ -1,8 +1,6 @@
 package com.dmitrystonie.contactbook.contactlist.ui
 
 import android.util.Log
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,9 +8,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListScreenState
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
-import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.graphics.Color
 
 
 @Composable

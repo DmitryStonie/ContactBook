@@ -9,16 +9,17 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
+import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModelFactory
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
-import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
+import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModelFactory
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListRoute
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
-import kotlin.lazy
 
 @Composable
-fun MainScreen(viewModelFactory: ViewModelFactory) {
+fun MainScreen(contactsListviewModelFactory: ContactsListViewModelFactory, contactViewModelFactory: ContactViewModel.Factory) {
     val navController = rememberNavController()
 
     Scaffold { paddingValues: PaddingValues ->
@@ -32,7 +33,7 @@ fun MainScreen(viewModelFactory: ViewModelFactory) {
                     onContactClick = { contactId ->
                         navController.navigate(ContactRoute(contactId))
                     },
-                    viewModel = viewModelFactory.create(ContactsListViewModel::class.java)
+                    viewModel = contactsListviewModelFactory.create(ContactsListViewModel::class.java)
 
                 )
             }
@@ -41,7 +42,7 @@ fun MainScreen(viewModelFactory: ViewModelFactory) {
 
                 ContactScreen(
                     onBackClick = { navController.navigateUp() },
-                    id = destination.contactId
+                    viewModel = contactViewModelFactory.create(destination.contactId)
                 )
             }
         }

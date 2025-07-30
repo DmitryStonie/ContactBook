@@ -30,6 +30,8 @@ android {
 
 
 dependencies {
+    implementation(project(":shared:contact"))
+
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)

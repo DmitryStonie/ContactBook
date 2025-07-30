@@ -6,12 +6,12 @@ import com.dmitrystonie.contactbook.contactdatabase.data.dao.CoordinatesDao
 import com.dmitrystonie.contactbook.contactdatabase.data.dao.LocationDao
 import com.dmitrystonie.contactbook.contactdatabase.data.dao.PictureDao
 import com.dmitrystonie.contactbook.contactdatabase.data.dao.StreetDao
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toContact
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toContactEntity
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toCoordinatesEntity
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toLocationEntity
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toPictureEntity
-import com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter.toStreetEntity
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toContact
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toContactEntity
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toCoordinatesEntity
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toLocationEntity
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toPictureEntity
+import com.dmitrystonie.contactbook.contactdatabase.data.converter.toStreetEntity
 import javax.inject.Inject
 
 class LocalContactDataSource @Inject constructor(

@@ -5,20 +5,23 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.dmitrystonie.contactbook.component.theme.ContactBookTheme
-import com.dmitrystonie.contactbook.contactlist.presentation.ViewModelFactory
+import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
+import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModelFactory
 import com.dmitrystonie.contactbook.ui.MainScreen
-import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
-    lateinit var viewModelFactory: ViewModelFactory
+    lateinit var contactListViewModelFactory: ContactsListViewModelFactory
+    lateinit var contactViewModelFactory: ContactViewModel.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModelFactory = (applicationContext as ContactBookApplication).appComponent.viewModelsFactory()
+        contactListViewModelFactory = (applicationContext as ContactBookApplication).appComponent.contactListViewModelsFactory()
+        contactViewModelFactory = (applicationContext as ContactBookApplication).appComponent.contactViewModelsFactory()
+
         enableEdgeToEdge()
         setContent {
             ContactBookTheme {
-                MainScreen(viewModelFactory)
+                MainScreen(contactListViewModelFactory, contactViewModelFactory)
             }
         }
     }

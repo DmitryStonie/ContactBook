@@ -30,6 +30,7 @@ dependencies {
     implementation(project(":component:theme"))
     implementation(project(":component:ui"))
     implementation(project(":shared:contact"))
+    implementation(project(":shared:contactdatabase"))
 
     implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
@@ -40,11 +41,6 @@ dependencies {
 
     //JSON serialization
     implementation(libs.kotlinx.serialization.json)
-
-    //network
-    implementation(libs.retrofit.core)
-    implementation(libs.retrofit.converter.kotlinxserialization)
-    implementation(libs.okhttp.logginginterceptor)
 
     //async programming
     implementation(libs.kotlinx.coroutines.android)
@@ -57,4 +53,11 @@ dependencies {
     //di
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    //viewmodel
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //livedata
+    implementation(libs.androidx.runtime.livedata)
 }

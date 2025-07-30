@@ -1,4 +1,4 @@
-package com.dmitrystonie.contactbook.contactlist.data.datasource.local.converter
+package com.dmitrystonie.contactbook.contactdatabase.data.converter
 
 import com.dmitrystonie.contactbook.contact.domain.Contact
 import com.dmitrystonie.contactbook.contact.domain.Coordinates
