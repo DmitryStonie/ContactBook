@@ -29,26 +29,31 @@ fun ContactScreen(
         Log.d("INFO-CONTACT", "launched effect")
         viewModel.loadContact(contactId)
     }
-    when (val currentState = state) {
-        is ContactScreenState.Content -> {
-            Log.d("INFO-CONTACT", "$currentState")
-            ContactInfo(
-                currentState.contact, onEmailClick = onEmailClick,
-                onPhoneClick = onPhoneClick,
-                onSmsClick = onSmsClick,
-                onLocationClick = onLocationClick
-            )
-        }
-
-        is ContactScreenState.Loading -> ProgressIndicator()
-        is ContactScreenState.Error -> ErrorIndicator(
-            message = currentState.message
+    Column {
+        TopBar(
+            onBackClick = onBackClick
         )
+        when (val currentState = state) {
+            is ContactScreenState.Content -> {
+                Log.d("INFO-CONTACT", "$currentState")
+                ContactInfo(
+                    currentState.contact, onEmailClick = onEmailClick,
+                    onPhoneClick = onPhoneClick,
+                    onSmsClick = onSmsClick,
+                    onLocationClick = onLocationClick
+                )
+            }
 
-        else -> {
-            Log.d("INFO-CONTACT", "$currentState")
-            Column { }
-        }
+            is ContactScreenState.Loading -> ProgressIndicator()
+            is ContactScreenState.Error -> ErrorIndicator(
+                message = currentState.message
+            )
+
+            else -> {
+                Log.d("INFO-CONTACT", "$currentState")
+                Column { }
+            }
+    }
     }
 
 }

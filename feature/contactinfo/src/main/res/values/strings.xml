@@ -3,4 +3,6 @@
     <string name="sms_action_description">Send SMS</string>
     <string name="email_action_description">Send email</string>
     <string name="place_action_description">Open place</string>
+    <string name="topbar_back_icon_description">Назад</string>
+
 </resources>

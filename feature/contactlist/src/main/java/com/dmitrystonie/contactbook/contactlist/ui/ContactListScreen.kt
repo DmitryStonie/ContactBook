@@ -1,5 +1,6 @@
 package com.dmitrystonie.contactbook.contactlist.ui
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
@@ -11,6 +12,7 @@ import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListScreenS
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
 import androidx.compose.runtime.getValue
 import com.dmitrystonie.contactbook.ui.ErrorIndicator
+import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -24,28 +26,31 @@ fun ContactListScreen(
     LaunchedEffect(Unit) {
         viewModel.loadContacts()
     }
-    PullToRefreshBox(
-        isRefreshing = state is ContactsListScreenState.Loading, onRefresh = { viewModel.loadRemoteContacts()}, modifier = Modifier.fillMaxSize()
-    ) {
-        when (val currentState = state) {
-            is ContactsListScreenState.Content -> {
-                ContactList(
-                    modifier = Modifier.fillMaxSize(),
-                    contacts = currentState.contacts,
-                    onContactClick = onContactClick,
+    Column {
+        TopBar(
+            onRefreshClick = {viewModel.loadRemoteContacts()}
+        )
+        PullToRefreshBox(
+            isRefreshing = state is ContactsListScreenState.Loading,
+            onRefresh = { viewModel.loadRemoteContacts() },
+            modifier = Modifier.fillMaxSize()
+        ) {
+            when (val currentState = state) {
+                is ContactsListScreenState.Content -> {
+                    ContactList(
+                        modifier = Modifier.fillMaxSize(),
+                        contacts = currentState.contacts,
+                        onContactClick = onContactClick,
+                    )
+                }
+
+                is ContactsListScreenState.Loading -> ProgressIndicator()
+                is ContactsListScreenState.Error -> ErrorIndicator(
+                    message = currentState.message
                 )
+
+                else -> {}
             }
-            is ContactsListScreenState.Loading -> {
-                ContactList(
-                    modifier = Modifier.fillMaxSize(),
-                    contacts = listOf(),
-                    onContactClick = onContactClick,
-                )
-            }
-            is ContactsListScreenState.Error -> ErrorIndicator(
-                message = currentState.message
-            )
-            else -> {}
         }
     }
 }
