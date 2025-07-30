@@ -19,11 +19,12 @@ fun ContactListScreen(
     val state by viewModel.state.observeAsState()
 
     LaunchedEffect(Unit) {
+        Log.d("INFO-LIST", "launchedEffect")
         viewModel.loadContacts()
     }
         when (val currentState = state) {
             is ContactsListScreenState.Content -> {
-                Log.d("INFO", "$currentState content")
+                Log.d("INFO-LIST", "$currentState")
                 ContactList(
                     modifier = Modifier.fillMaxSize(),
                     contacts = currentState.contacts,
@@ -31,7 +32,7 @@ fun ContactListScreen(
                 )
             }
             else -> {
-                Log.d("INFO", "$currentState")
+                Log.d("INFO-LIST", "$currentState")
             }
         }
 }

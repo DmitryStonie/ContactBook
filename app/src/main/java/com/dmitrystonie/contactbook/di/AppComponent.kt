@@ -2,7 +2,7 @@ package com.dmitrystonie.contactbook.di
 
 import android.content.Context
 import com.dmitrystonie.contactbook.contactinfo.di.ContactModule
-import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
+import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModelFactory
 import com.dmitrystonie.contactbook.contactlist.di.ContactListModule
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModelFactory
 import com.dmitrystonie.contactbook.di.database.DatabaseModule
@@ -18,7 +18,6 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent
     }
-
     fun contactListViewModelsFactory() : ContactsListViewModelFactory
-    fun contactViewModelsFactory() : ContactViewModel.Factory
+    fun contactViewModelsFactory() : ContactViewModelFactory
 }

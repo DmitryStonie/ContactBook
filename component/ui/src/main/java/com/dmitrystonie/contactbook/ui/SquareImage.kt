@@ -21,7 +21,7 @@ fun SquareImage(modifier: Modifier = Modifier, url: String?, description: String
     GlideImage(
         model = url, contentDescription = description,
         modifier = modifier,
-        contentScale = ContentScale.Fit,
+        contentScale = ContentScale.Crop,
         loading = placeholder(R.drawable.contact),
         failure = placeholder(R.drawable.contact),
     )

@@ -1,7 +1,7 @@
-package com.dmitrystonie.contactbook.contactlist.di
+package com.dmitrystonie.contactbook.contactinfo.di
 
 import androidx.lifecycle.ViewModel
-import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
+import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -13,8 +13,8 @@ interface PresentationModule {
 
     @Binds
     @IntoMap
-    @ContactListViewModelKey(ContactsListViewModel::class)
-    fun bindContactsViewModel (contactsViewModel: ContactsListViewModel): ContactsListViewModel
+    @ContactViewModelKey(ContactViewModel::class)
+    fun bindContactsViewModel (contactsViewModel: ContactViewModel): ViewModel
 
 }
 
@@ -26,4 +26,4 @@ interface PresentationModule {
 )
 @Retention(AnnotationRetention.RUNTIME)
 @MapKey
-annotation class ContactListViewModelKey(val value: KClass<out ViewModel>)
+annotation class ContactViewModelKey(val value: KClass<out ViewModel>)
