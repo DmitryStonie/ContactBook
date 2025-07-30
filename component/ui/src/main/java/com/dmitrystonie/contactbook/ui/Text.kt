@@ -11,9 +11,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
+val bigTitleStyle = TextStyle(
+    fontSize = 28.sp,
+    fontWeight = FontWeight.W400,
+    letterSpacing = 0.sp,
+)
+
 val titleStyle = TextStyle(
     fontSize = 20.sp,
-    fontWeight = FontWeight.W500,
+    fontWeight = FontWeight.W400,
     letterSpacing = 0.sp,
 )
 
@@ -22,6 +28,18 @@ val textStyle = TextStyle(
     fontWeight = FontWeight.W400,
     letterSpacing = 0.sp,
 )
+
+@Composable
+fun BigTitle(modifier: Modifier = Modifier, text: String, color: Color){
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        style = bigTitleStyle,
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1,
+    )
+}
 
 @Composable
 fun Title(modifier: Modifier = Modifier, text: String, color: Color){
@@ -44,6 +62,15 @@ fun Text(modifier: Modifier = Modifier, text: String, color: Color){
         style = textStyle,
         overflow = TextOverflow.Ellipsis,
         maxLines = 1,
+    )
+}
+
+@Composable
+@Preview
+fun BigTitlePreview(){
+    BigTitle(
+        text = "Иванов Иван Иванович",
+        color = MaterialTheme.colorScheme.onSurface
     )
 }
 

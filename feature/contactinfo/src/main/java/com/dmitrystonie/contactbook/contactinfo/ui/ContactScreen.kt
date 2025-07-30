@@ -6,8 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import com.dmitrystonie.contactbook.contact.domain.Coordinates
-import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactScreenState
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
 import com.dmitrystonie.contactbook.ui.ErrorIndicator
@@ -26,7 +24,6 @@ fun ContactScreen(
     val state by viewModel.state.observeAsState()
 
     LaunchedEffect(Unit) {
-        Log.d("INFO-CONTACT", "launched effect")
         viewModel.loadContact(contactId)
     }
     Column {
@@ -35,7 +32,6 @@ fun ContactScreen(
         )
         when (val currentState = state) {
             is ContactScreenState.Content -> {
-                Log.d("INFO-CONTACT", "$currentState")
                 ContactInfo(
                     currentState.contact, onEmailClick = onEmailClick,
                     onPhoneClick = onPhoneClick,

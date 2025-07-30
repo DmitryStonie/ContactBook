@@ -12,7 +12,6 @@ import com.dmitrystonie.contactbook.contact.domain.Coordinates
 import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contact.domain.Picture
 import com.dmitrystonie.contactbook.contact.domain.Street
-import com.dmitrystonie.contactbook.ui.SquareImage
 
 @Composable
 fun ContactInfo(
@@ -28,9 +27,9 @@ fun ContactInfo(
                 .verticalScroll(rememberScrollState())
                 .weight(weight = 1f, fill = false)
         ) {
-
-            SquareImage(
-                url = contact.picture.largeUrl, description = contact.name
+            ImageField(
+                name = contact.name,
+                imageUrl = contact.picture.largeUrl
             )
 
             PhoneField(phone = contact.phone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick)
