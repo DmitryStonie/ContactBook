@@ -45,4 +45,8 @@ class LocalContactDataSource @Inject constructor(
             )
         }
     }
+    suspend fun deleteContacts(){
+        val contactEntities = contactDao.getAll()
+        contactEntities.forEach { contactEntity -> contactDao.delete(contactEntity) }
+    }
 }

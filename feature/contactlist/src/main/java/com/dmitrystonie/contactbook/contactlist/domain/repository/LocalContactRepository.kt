@@ -5,4 +5,6 @@ import com.dmitrystonie.contactbook.contact.domain.Contact
 interface LocalContactRepository {
     suspend fun saveContacts(contacts: List<Contact>)
     suspend fun getContacts(): List<Contact>
+    suspend fun deleteContacts()
+
 }

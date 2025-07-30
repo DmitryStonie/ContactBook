@@ -8,6 +8,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactScreenState
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
+import com.dmitrystonie.contactbook.ui.ErrorIndicator
+import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 
 @Composable
 fun ContactScreen(viewModel: ContactViewModel, onBackClick: () -> Unit, contactId: Long) {
@@ -22,6 +24,10 @@ fun ContactScreen(viewModel: ContactViewModel, onBackClick: () -> Unit, contactI
             Log.d("INFO-CONTACT", "$currentState")
             ContactInfo(currentState.contact)
         }
+        is ContactScreenState.Loading -> ProgressIndicator()
+        is ContactScreenState.Error -> ErrorIndicator(
+            message = currentState.message
+        )
 
         else -> {
             Log.d("INFO-CONTACT", "$currentState")

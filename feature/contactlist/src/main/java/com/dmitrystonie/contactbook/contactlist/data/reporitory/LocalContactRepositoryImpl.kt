@@ -11,5 +11,6 @@ class LocalContactRepositoryImpl @Inject constructor(private val dataSource: Loc
 
 
     override suspend fun getContacts(): List<Contact> = dataSource.getContacts()
+    override suspend fun deleteContacts() = dataSource.deleteContacts()
 
 }

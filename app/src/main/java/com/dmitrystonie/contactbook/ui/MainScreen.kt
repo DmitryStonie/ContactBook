@@ -12,11 +12,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.dmitrystonie.contactbook.component.theme.BgPrimary
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
-import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModelFactory
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
 import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModel
-import com.dmitrystonie.contactbook.contactlist.presentation.ContactsListViewModelFactory
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListRoute
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
 

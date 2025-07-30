@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,8 +16,13 @@ import com.dmitrystonie.contactbook.contact.domain.Picture
 import com.dmitrystonie.contactbook.contact.domain.Street
 import kotlin.collections.MutableList
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>, onContactClick: (id: Long) -> Unit) {
+fun ContactList(
+    modifier: Modifier = Modifier,
+    contacts: List<Contact>,
+    onContactClick: (id: Long) -> Unit
+) {
     LazyColumn(modifier = modifier) {
         items(contacts) { contact ->
             ContactElement(
@@ -32,6 +38,7 @@ fun ContactList(modifier: Modifier = Modifier, contacts: List<Contact>, onContac
     }
 }
 
+
 @Preview
 @Composable
 fun ContactListPreview() {
@@ -39,9 +46,7 @@ fun ContactListPreview() {
         Contact(
             id = 1,
             gender = "male",
-            name =
-                "Mr Alexander Rasmussen"
-            ,
+            name = "Mr Alexander Rasmussen",
             location = Location(
                 street = Street(
                     number = 1173, name = "Højstrupvej"
@@ -66,7 +71,6 @@ fun ContactListPreview() {
         )
     }
     ContactList(
-        modifier = Modifier.fillMaxSize(), contacts = contactsMock,
-        onContactClick = { }
+        modifier = Modifier.fillMaxSize(), contacts = contactsMock, onContactClick = { },
     )
 }
