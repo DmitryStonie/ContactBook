@@ -48,6 +48,7 @@ dependencies {
     implementation(project(":feature:contactlist"))
     implementation(project(":shared:contact"))
     implementation(project(":shared:contactdatabase"))
+    implementation(project(":shared:useractions"))
     implementation(project(":util:date"))
 
     implementation(libs.androidx.core.ktx)

@@ -20,9 +20,6 @@ class ContactsListViewModel @Inject constructor(
     private val _state = MutableLiveData<ContactsListScreenState>(ContactsListScreenState.Initial)
     val state: LiveData<ContactsListScreenState> = _state
 
-    private val _isRefreshing = MutableStateFlow(_state.value == ContactsListScreenState.Loading)
-    val isRefreshing = _isRefreshing.asStateFlow()
-
     fun loadContacts() {
         Log.d("INFO-LIST", "loading contacts in viewmodel")
         if (_state.value is ContactsListScreenState.Loading) {

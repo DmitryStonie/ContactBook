@@ -15,7 +15,13 @@ import com.dmitrystonie.contactbook.contact.domain.Street
 import com.dmitrystonie.contactbook.ui.SquareImage
 
 @Composable
-fun ContactInfo(contact: Contact) {
+fun ContactInfo(
+    contact: Contact,
+    onEmailClick: (email: String) -> Unit,
+    onPhoneClick: (phone: String) -> Unit,
+    onSmsClick: (sms: String) -> Unit,
+    onLocationClick: (latitude: String, longitude: String) -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
@@ -24,18 +30,20 @@ fun ContactInfo(contact: Contact) {
         ) {
 
             SquareImage(
-                url = contact.picture.largeUrl,
-                description = contact.name
+                url = contact.picture.largeUrl, description = contact.name
             )
 
-            PhoneField(phone = contact.phone, onPhoneClick = {}, onSmsClick = {})
+            PhoneField(phone = contact.phone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick)
 
             EmailField(
-                email = contact.email, onEmailClick = {})
+                email = contact.email, onEmailClick = onEmailClick
+            )
 
             PlaceField(
                 place = "${contact.location.street.number}, ${contact.location.street.name}",
-                onPlaceClick = {})
+                coordinates = contact.location.coordinates,
+                onLocationClick = onLocationClick
+            )
 
         }
     }
@@ -44,35 +52,35 @@ fun ContactInfo(contact: Contact) {
 @Preview
 @Composable
 fun ContactInfoPreview() {
-    val contactMock =
-        Contact(
-            id = 1,
-            gender = "male",
-            name = "asdsdfa",
-            location = Location(
-                street = Street(
-                    number = 1173, name = "Højstrupvej"
-                ),
-                city = "Nørrebro",
-                state = "Nordjylland",
-                country = "Denmark",
-                postcode = "dsfds",
-                coordinates = Coordinates(
-                    latitude = "-45.7555", longitude = "-142.1687"
-                ),
+    val contactMock = Contact(
+        id = 1,
+        gender = "male",
+        name = "asdsdfa",
+        location = Location(
+            street = Street(
+                number = 1173, name = "Højstrupvej"
             ),
-            birthday = "1982-07-02",
-            email = "alexander.rasmussen@example.com",
-            phone = "19924371",
-            cellphone = "26561423",
-            picture = Picture(
-                largeUrl = "fds",
-                mediumUrl = "gfdsafds",
-                thumbnailUrl = "fdsfa"
-            )
+            city = "Nørrebro",
+            state = "Nordjylland",
+            country = "Denmark",
+            postcode = "dsfds",
+            coordinates = Coordinates(
+                latitude = "-45.7555", longitude = "-142.1687"
+            ),
+        ),
+        birthday = "1982-07-02",
+        email = "alexander.rasmussen@example.com",
+        phone = "19924371",
+        cellphone = "26561423",
+        picture = Picture(
+            largeUrl = "fds", mediumUrl = "gfdsafds", thumbnailUrl = "fdsfa"
         )
+    )
 
     ContactInfo(
-        contact = contactMock
-    )
+        contact = contactMock,
+        onEmailClick = { },
+        onPhoneClick = { },
+        onSmsClick = {},
+        onLocationClick = {_,_->})
 }

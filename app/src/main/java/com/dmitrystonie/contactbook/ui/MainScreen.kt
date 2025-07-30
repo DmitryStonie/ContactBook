@@ -11,6 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.contact.domain.Coordinates
+import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
@@ -19,7 +21,14 @@ import com.dmitrystonie.contactbook.contactlist.ui.ContactListRoute
 import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
 
 @Composable
-fun MainScreen(contactsListViewModel: ContactsListViewModel, contactViewModel: ContactViewModel) {
+fun MainScreen(
+    contactsListViewModel: ContactsListViewModel,
+    contactViewModel: ContactViewModel,
+    onEmailClick: (email: String) -> Unit,
+    onPhoneClick: (phone: String) -> Unit,
+    onSmsClick: (sms: String) -> Unit,
+    onLocationClick: (latitude: String, longitude: String) -> Unit
+) {
     val navController = rememberNavController()
 
     Scaffold(containerColor = BgPrimary) { paddingValues: PaddingValues ->
@@ -44,7 +53,11 @@ fun MainScreen(contactsListViewModel: ContactsListViewModel, contactViewModel: C
                 ContactScreen(
                     onBackClick = { navController.navigateUp() },
                     viewModel = contactViewModel,
-                    contactId = destination.contactId
+                    contactId = destination.contactId,
+                    onEmailClick = onEmailClick,
+                    onPhoneClick = onPhoneClick,
+                    onSmsClick = onSmsClick,
+                    onLocationClick = onLocationClick
                 )
             }
         }

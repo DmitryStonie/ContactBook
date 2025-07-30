@@ -1,8 +1,6 @@
 package com.dmitrystonie.contactbook.contactinfo.ui
 
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ButtonColors
 import androidx.compose.runtime.Composable
@@ -18,7 +16,7 @@ import com.dmitrystonie.contactbook.ui.ActionButton
 import com.dmitrystonie.contactbook.ui.FieldWithIcon
 
 @Composable
-fun EmailField(email: String, onEmailClick: () -> Unit) {
+fun EmailField(email: String, onEmailClick: (String) -> Unit) {
     val emailActionColors = ButtonColors(
         containerColor = EmailActionColor,
         contentColor = BgPrimary,
@@ -26,20 +24,16 @@ fun EmailField(email: String, onEmailClick: () -> Unit) {
         disabledContentColor = BgPrimary
     )
     val actions = @Composable {
-            ActionButton(
-                modifier = Modifier
-                    .size(40.dp),
-                onClick = onEmailClick,
-                colors = emailActionColors,
-                iconPainter = painterResource(R.drawable.email_icon),
-                iconDescription = stringResource(R.string.email_action_description),
-            )
+        ActionButton(
+            modifier = Modifier.size(40.dp),
+            onClick = { onEmailClick(email) },
+            colors = emailActionColors,
+            iconPainter = painterResource(R.drawable.email_icon),
+            iconDescription = stringResource(R.string.email_action_description),
+        )
     }
     FieldWithIcon(
-        modifier = Modifier.fillMaxWidth(),
-        text = email,
-        onClick = {},
-        actions = actions
+        modifier = Modifier.fillMaxWidth(), text = email, onClick = {}, actions = actions
     )
 }
 

@@ -19,7 +19,10 @@ import com.dmitrystonie.contactbook.ui.ActionButton
 import com.dmitrystonie.contactbook.ui.FieldWithIcon
 
 @Composable
-fun PhoneField(phone: String, onPhoneClick: () -> Unit, onSmsClick: () -> Unit){
+fun PhoneField(
+    phone: String, onPhoneClick: (phone: String) -> Unit,
+    onSmsClick: (sms: String) -> Unit,
+) {
     val phoneActionColors = ButtonColors(
         containerColor = PhoneActionColor,
         contentColor = BgPrimary,
@@ -35,15 +38,19 @@ fun PhoneField(phone: String, onPhoneClick: () -> Unit, onSmsClick: () -> Unit){
     val actions = @Composable {
         Row {
             ActionButton(
-                modifier = Modifier.padding(end = 4.dp).size(40.dp),
-                onClick = onPhoneClick,
+                modifier = Modifier
+                    .padding(end = 4.dp)
+                    .size(40.dp),
+                onClick = {onPhoneClick(phone)},
                 colors = phoneActionColors,
                 iconPainter = painterResource(R.drawable.phone_icon),
                 iconDescription = stringResource(R.string.phone_action_description),
             )
             ActionButton(
-                modifier = Modifier.padding(start = 4.dp).size(40.dp),
-                onClick = onSmsClick,
+                modifier = Modifier
+                    .padding(start = 4.dp)
+                    .size(40.dp),
+                onClick = {onSmsClick(phone)},
                 colors = smsActionColors,
                 iconPainter = painterResource(R.drawable.sms_icon),
                 iconDescription = stringResource(R.string.sms_action_description),
@@ -60,7 +67,7 @@ fun PhoneField(phone: String, onPhoneClick: () -> Unit, onSmsClick: () -> Unit){
 
 @Preview
 @Composable
-fun PhoneFieldPreview(){
+fun PhoneFieldPreview() {
     PhoneField(
         phone = "7 936 273 92 73",
         onPhoneClick = {},

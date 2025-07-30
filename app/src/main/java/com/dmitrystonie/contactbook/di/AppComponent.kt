@@ -20,4 +20,6 @@ interface AppComponent {
     }
     fun contactListViewModelsFactory() : ContactsListViewModelFactory
     fun contactViewModelsFactory() : ContactViewModelFactory
+
+
 }
