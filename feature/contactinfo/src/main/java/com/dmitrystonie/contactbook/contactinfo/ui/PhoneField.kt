@@ -16,11 +16,11 @@ import com.dmitrystonie.contactbook.component.theme.PhoneActionColor
 import com.dmitrystonie.contactbook.component.theme.SmsActionColor
 import com.dmitrystonie.contactbook.feature.contactinfo.R
 import com.dmitrystonie.contactbook.ui.ActionButton
-import com.dmitrystonie.contactbook.ui.FieldWithIcon
+import com.dmitrystonie.contactbook.ui.FieldWithIconAndSubtitle
 
 @Composable
 fun PhoneField(
-    phone: String, onPhoneClick: (phone: String) -> Unit,
+    phone: String, subtitle: String, onPhoneClick: (phone: String) -> Unit,
     onSmsClick: (sms: String) -> Unit,
 ) {
     val phoneActionColors = ButtonColors(
@@ -57,11 +57,12 @@ fun PhoneField(
             )
         }
     }
-    FieldWithIcon(
+    FieldWithIconAndSubtitle(
         modifier = Modifier.fillMaxWidth(),
         text = phone,
         onClick = {},
-        actions = actions
+        actions = actions,
+        subtitle = subtitle
     )
 }
 
@@ -71,6 +72,7 @@ fun PhoneFieldPreview() {
     PhoneField(
         phone = "7 936 273 92 73",
         onPhoneClick = {},
-        onSmsClick = {}
+        onSmsClick = {},
+        subtitle = "Мобильный"
     )
 }

@@ -29,39 +29,57 @@ val textStyle = TextStyle(
     letterSpacing = 0.sp,
 )
 
+val smallTextStyle = TextStyle(
+    fontSize = 14.sp,
+    fontWeight = FontWeight.W400,
+    letterSpacing = 0.sp,
+)
+
 @Composable
-fun BigTitle(modifier: Modifier = Modifier, text: String, color: Color){
+fun BigTitle(modifier: Modifier = Modifier, text: String, color: Color, maxLines: Int = 1){
     Text(
         text = text,
         modifier = modifier,
         color = color,
         style = bigTitleStyle,
         overflow = TextOverflow.Ellipsis,
-        maxLines = 1,
+        maxLines = maxLines,
     )
 }
 
 @Composable
-fun Title(modifier: Modifier = Modifier, text: String, color: Color){
+fun Title(modifier: Modifier = Modifier, text: String, color: Color, maxLines: Int = 1){
     Text(
         text = text,
         modifier = modifier,
         color = color,
         style = titleStyle,
         overflow = TextOverflow.Ellipsis,
-        maxLines = 1,
+        maxLines = maxLines,
     )
 }
 
 @Composable
-fun Text(modifier: Modifier = Modifier, text: String, color: Color){
+fun Text(modifier: Modifier = Modifier, text: String, color: Color, maxLines: Int = 1){
     Text(
         text = text,
         modifier = modifier,
         color = color,
         style = textStyle,
         overflow = TextOverflow.Ellipsis,
-        maxLines = 1,
+        maxLines = maxLines,
+    )
+}
+
+@Composable
+fun SmallText(modifier: Modifier = Modifier, text: String, color: Color, maxLines: Int = 1){
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        style = smallTextStyle,
+        overflow = TextOverflow.Ellipsis,
+        maxLines = maxLines,
     )
 }
 

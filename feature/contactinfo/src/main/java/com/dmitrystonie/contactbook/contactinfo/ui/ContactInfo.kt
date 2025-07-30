@@ -6,12 +6,14 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.dmitrystonie.contactbook.contact.domain.Contact
 import com.dmitrystonie.contactbook.contact.domain.Coordinates
 import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contact.domain.Picture
 import com.dmitrystonie.contactbook.contact.domain.Street
+import com.dmitrystonie.contactbook.feature.contactinfo.R
 
 @Composable
 fun ContactInfo(
@@ -32,14 +34,22 @@ fun ContactInfo(
                 imageUrl = contact.picture.largeUrl
             )
 
-            PhoneField(phone = contact.phone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick)
+            PhoneField(
+                phone = contact.phone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick,
+                subtitle = stringResource(R.string.mobile_phone_subtitle)
+            )
+
+            PhoneField(
+                phone = contact.cellphone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick,
+                subtitle = stringResource(R.string.cellphone_phone_subtitle)
+            )
 
             EmailField(
                 email = contact.email, onEmailClick = onEmailClick
             )
 
             PlaceField(
-                place = "${contact.location.street.number}, ${contact.location.street.name}",
+                place = "${contact.location.street.number}, ${contact.location.street.name}, ${contact.location.city}, ${contact.location.country}",
                 coordinates = contact.location.coordinates,
                 onLocationClick = onLocationClick
             )

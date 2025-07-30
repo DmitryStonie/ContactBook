@@ -34,7 +34,7 @@ fun PlaceField(place: String, coordinates: Coordinates, onLocationClick: (latitu
         )
     }
     FieldWithIcon(
-        modifier = Modifier.fillMaxWidth(), text = place, onClick = {}, actions = actions
+        modifier = Modifier.fillMaxWidth(), text = place, onClick = {}, actions = actions, maxLines = 3
     )
 }
 
