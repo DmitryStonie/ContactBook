@@ -22,7 +22,7 @@ class ContactsListViewModel @Inject constructor(
 
     fun loadContacts() {
         Log.d("INFO-LIST", "loading contacts in viewmodel")
-        if (_state.value is ContactsListScreenState.Loading) {
+        if (_state.value is ContactsListScreenState.Loading || _state.value is ContactsListScreenState.Content) {
             return
         }
         _state.value = ContactsListScreenState.Loading

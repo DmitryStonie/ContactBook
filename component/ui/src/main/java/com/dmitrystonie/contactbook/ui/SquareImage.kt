@@ -1,6 +1,7 @@
 package com.dmitrystonie.contactbook.ui
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
@@ -20,7 +21,7 @@ import com.dmitrystonie.contactbook.component.ui.R
 fun SquareImage(modifier: Modifier = Modifier, url: String?, description: String) {
     GlideImage(
         model = url, contentDescription = description,
-        modifier = modifier,
+        modifier = modifier.fillMaxWidth(),
         contentScale = ContentScale.Crop,
         loading = placeholder(R.drawable.contact),
         failure = placeholder(R.drawable.contact),
