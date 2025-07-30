@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,7 +21,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dmitrystonie.contactbook.component.theme.TextTetriary
 import com.dmitrystonie.contactbook.component.ui.R
 
 val textStyle = TextStyle(
@@ -37,12 +37,12 @@ fun ErrorIndicator(modifier: Modifier = Modifier, message: String) {
             painter = painterResource(R.drawable.error_icon),
             contentDescription = stringResource(R.string.error_icon_description),
             contentScale = ContentScale.FillWidth,
-            colorFilter = ColorFilter.tint(TextTetriary)
+            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant)
         )
         Text(
             text = message,
             modifier = modifier,
-            color = TextTetriary,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             style = textStyle,
             overflow = TextOverflow.Ellipsis,
             maxLines = 2,

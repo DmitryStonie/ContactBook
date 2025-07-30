@@ -11,7 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.component.theme.ButtonContent
 import com.dmitrystonie.contactbook.component.theme.PhoneActionColor
 import com.dmitrystonie.contactbook.component.theme.SmsActionColor
 import com.dmitrystonie.contactbook.feature.contactinfo.R
@@ -25,15 +25,15 @@ fun PhoneField(
 ) {
     val phoneActionColors = ButtonColors(
         containerColor = PhoneActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = PhoneActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     val smsActionColors = ButtonColors(
         containerColor = SmsActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = SmsActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     val actions = @Composable {
         Row {

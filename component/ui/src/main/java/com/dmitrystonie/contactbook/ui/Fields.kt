@@ -7,15 +7,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.component.theme.ButtonContent
 import com.dmitrystonie.contactbook.component.theme.PlaceActionColor
-import com.dmitrystonie.contactbook.component.theme.TextPrimary
 import com.dmitrystonie.contactbook.component.ui.R
 import com.dmitrystonie.contactbook.component.ui.Title
 
@@ -35,7 +35,7 @@ fun FieldWithIcon(
         Title(
             modifier = Modifier.weight(3f),
             text = text,
-            color = TextPrimary,
+            color = MaterialTheme.colorScheme.onSurface,
         )
         Row(modifier = Modifier.weight(1f), horizontalArrangement = Arrangement.End) {
             actions()
@@ -48,9 +48,9 @@ fun FieldWithIcon(
 fun FieldWithIconPreview() {
     val mockColors = ButtonColors(
         containerColor = PlaceActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = PlaceActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     val mockIcon = painterResource(R.drawable.place)
     val mockDescription = "Описание"

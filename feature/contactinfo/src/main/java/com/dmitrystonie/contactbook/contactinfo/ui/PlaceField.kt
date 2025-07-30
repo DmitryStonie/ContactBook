@@ -9,7 +9,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.component.theme.ButtonContent
 import com.dmitrystonie.contactbook.component.theme.PlaceActionColor
 import com.dmitrystonie.contactbook.contact.domain.Coordinates
 import com.dmitrystonie.contactbook.feature.contactinfo.R
@@ -20,9 +20,9 @@ import com.dmitrystonie.contactbook.ui.FieldWithIcon
 fun PlaceField(place: String, coordinates: Coordinates, onLocationClick: (latitude: String, longitude: String) -> Unit) {
     val placeActionColors = ButtonColors(
         containerColor = PlaceActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = PlaceActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     val actions = @Composable {
         ActionButton(

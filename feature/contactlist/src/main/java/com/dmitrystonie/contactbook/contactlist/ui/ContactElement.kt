@@ -6,13 +6,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.TextPrimary
-import com.dmitrystonie.contactbook.component.theme.TextSecondary
 import com.dmitrystonie.contactbook.component.ui.Text
 import com.dmitrystonie.contactbook.component.ui.Title
 import com.dmitrystonie.contactbook.ui.CircularImage
@@ -29,17 +28,17 @@ fun ContactElement(modifier: Modifier = Modifier, imageUrl: String? = null, name
         Column(horizontalAlignment = Alignment.Start, modifier = Modifier.padding(start = 16.dp)){
             Title(
                 text = name,
-                color = TextPrimary,
+                color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 4.dp)
             )
             Text(
                 text = location,
-                color = TextSecondary,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(bottom = 4.dp)
             )
             Text(
                 text = phone,
-                color = TextSecondary
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }

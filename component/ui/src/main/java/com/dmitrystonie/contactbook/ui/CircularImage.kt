@@ -3,6 +3,7 @@ package com.dmitrystonie.contactbook.ui
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -12,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.integration.compose.placeholder
-import com.dmitrystonie.contactbook.component.theme.BgSecondary
 import com.dmitrystonie.contactbook.component.ui.R
 
 @OptIn(ExperimentalGlideComposeApi::class)
@@ -20,7 +20,7 @@ import com.dmitrystonie.contactbook.component.ui.R
 fun CircularImage(modifier: Modifier = Modifier, url: String?, description: String) {
     GlideImage(
         model = url, contentDescription = description,
-        modifier = modifier.clip(CircleShape).border(width = 2.dp, shape = CircleShape, color = BgSecondary),
+        modifier = modifier.clip(CircleShape).border(width = 2.dp, shape = CircleShape, color = MaterialTheme.colorScheme.outlineVariant),
         contentScale = ContentScale.Fit,
         loading = placeholder(R.drawable.contact),
         failure = placeholder(R.drawable.contact),

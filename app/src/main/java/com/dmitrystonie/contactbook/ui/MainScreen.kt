@@ -10,9 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
-import com.dmitrystonie.contactbook.contact.domain.Coordinates
-import com.dmitrystonie.contactbook.contact.domain.Location
 import com.dmitrystonie.contactbook.contactinfo.presentation.ContactViewModel
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactRoute
 import com.dmitrystonie.contactbook.contactinfo.ui.ContactScreen
@@ -31,7 +28,7 @@ fun MainScreen(
 ) {
     val navController = rememberNavController()
 
-    Scaffold(containerColor = BgPrimary) { paddingValues: PaddingValues ->
+    Scaffold { paddingValues: PaddingValues ->
         NavHost(
             modifier = Modifier.padding(paddingValues),
             navController = navController,

@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.component.theme.ButtonContent
 import com.dmitrystonie.contactbook.component.theme.PlaceActionColor
 import com.dmitrystonie.contactbook.component.ui.R
 
@@ -40,9 +40,9 @@ fun ActionButton(modifier: Modifier = Modifier, onClick: () -> Unit, colors: But
 fun ActionButtonPreview() {
     val mockColors = ButtonColors(
         containerColor = PlaceActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = PlaceActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     ActionButton(
         onClick = {},

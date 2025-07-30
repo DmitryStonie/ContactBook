@@ -9,7 +9,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.dmitrystonie.contactbook.component.theme.BgPrimary
+import com.dmitrystonie.contactbook.component.theme.ButtonContent
 import com.dmitrystonie.contactbook.component.theme.EmailActionColor
 import com.dmitrystonie.contactbook.feature.contactinfo.R
 import com.dmitrystonie.contactbook.ui.ActionButton
@@ -19,9 +19,9 @@ import com.dmitrystonie.contactbook.ui.FieldWithIcon
 fun EmailField(email: String, onEmailClick: (String) -> Unit) {
     val emailActionColors = ButtonColors(
         containerColor = EmailActionColor,
-        contentColor = BgPrimary,
+        contentColor = ButtonContent,
         disabledContainerColor = EmailActionColor,
-        disabledContentColor = BgPrimary
+        disabledContentColor = ButtonContent
     )
     val actions = @Composable {
         ActionButton(
