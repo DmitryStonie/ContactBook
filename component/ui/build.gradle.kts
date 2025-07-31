@@ -28,6 +28,8 @@ dependencies {
     implementation(project(":component:theme"))
 
     implementation(libs.androidx.core.ktx)
+
+    //compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
@@ -35,5 +37,6 @@ dependencies {
     implementation(libs.androidx.material3)
     debugImplementation(libs.ui.tooling)
 
+    //images
     implementation(libs.glide)
 }
