@@ -17,11 +17,7 @@ import com.dmitrystonie.contactbook.feature.contactinfo.R
 
 @Composable
 fun ContactInfo(
-    contact: Contact,
-    onEmailClick: (email: String) -> Unit,
-    onPhoneClick: (phone: String) -> Unit,
-    onSmsClick: (sms: String) -> Unit,
-    onLocationClick: (latitude: String, longitude: String) -> Unit
+    contact: Contact
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Column(
@@ -34,27 +30,21 @@ fun ContactInfo(
             )
 
             PhoneField(
-                phone = contact.phone,
-                onPhoneClick = onPhoneClick,
-                onSmsClick = onSmsClick,
-                subtitle = stringResource(R.string.mobile_phone_subtitle)
+                phone = contact.phone, subtitle = stringResource(R.string.mobile_phone_subtitle)
             )
 
             PhoneField(
                 phone = contact.cellphone,
-                onPhoneClick = onPhoneClick,
-                onSmsClick = onSmsClick,
                 subtitle = stringResource(R.string.cellphone_phone_subtitle)
             )
 
             EmailField(
-                email = contact.email, onEmailClick = onEmailClick
+                email = contact.email
             )
 
             PlaceField(
                 place = "${contact.location.street.number}, ${contact.location.street.name}, ${contact.location.city}, ${contact.location.country}",
                 coordinates = contact.location.coordinates,
-                onLocationClick = onLocationClick
             )
 
         }
@@ -90,9 +80,6 @@ fun ContactInfoPreview() {
     )
 
     ContactInfo(
-        contact = contactMock,
-        onEmailClick = { },
-        onPhoneClick = { },
-        onSmsClick = {},
-        onLocationClick = { _, _ -> })
+        contact = contactMock
+    )
 }

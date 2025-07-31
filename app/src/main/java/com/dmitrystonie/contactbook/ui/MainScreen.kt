@@ -19,11 +19,7 @@ import com.dmitrystonie.contactbook.contactlist.ui.ContactListScreen
 @Composable
 fun MainScreen(
     contactsListViewModel: ContactsListViewModel,
-    contactViewModel: ContactViewModel,
-    onEmailClick: (email: String) -> Unit,
-    onPhoneClick: (phone: String) -> Unit,
-    onSmsClick: (sms: String) -> Unit,
-    onLocationClick: (latitude: String, longitude: String) -> Unit
+    contactViewModel: ContactViewModel
 ) {
     val navController = rememberNavController()
 
@@ -46,11 +42,7 @@ fun MainScreen(
                 ContactScreen(
                     onBackClick = { navController.navigateUp() },
                     viewModel = contactViewModel,
-                    contactId = destination.contactId,
-                    onEmailClick = onEmailClick,
-                    onPhoneClick = onPhoneClick,
-                    onSmsClick = onSmsClick,
-                    onLocationClick = onLocationClick
+                    contactId = destination.contactId
                 )
             }
         }

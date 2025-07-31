@@ -15,11 +15,7 @@ import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 fun ContactScreen(
     viewModel: ContactViewModel,
     onBackClick: () -> Unit,
-    onEmailClick: (email: String) -> Unit,
     contactId: Long,
-    onPhoneClick: (phone: String) -> Unit,
-    onSmsClick: (sms: String) -> Unit,
-    onLocationClick: (latitude: String, longitude: String) -> Unit
 ) {
     val state by viewModel.state.observeAsState()
 
@@ -33,10 +29,7 @@ fun ContactScreen(
         when (val currentState = state) {
             is ContactScreenState.Content -> {
                 ContactInfo(
-                    currentState.contact, onEmailClick = onEmailClick,
-                    onPhoneClick = onPhoneClick,
-                    onSmsClick = onSmsClick,
-                    onLocationClick = onLocationClick
+                    currentState.contact
                 )
             }
 

@@ -31,6 +31,7 @@ dependencies {
     implementation(project(":component:ui"))
     implementation(project(":shared:contact"))
     implementation(project(":shared:contactdatabase"))
+    implementation(project(":shared:useractions"))
 
     implementation(libs.androidx.core.ktx)
 
