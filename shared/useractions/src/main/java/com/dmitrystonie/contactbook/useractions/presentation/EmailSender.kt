@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.core.net.toUri
 
 
-class EmailSender(private val context: Context){
+class EmailSender(private val context: Context) {
     fun sendEmail(addresses: Array<String>) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = "mailto:".toUri()

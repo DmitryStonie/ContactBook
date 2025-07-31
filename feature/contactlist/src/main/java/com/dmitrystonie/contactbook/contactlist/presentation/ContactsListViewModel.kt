@@ -3,12 +3,9 @@ package com.dmitrystonie.contactbook.contactlist.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.dmitrystonie.contactbook.contactlist.domain.usecase.GetContactsListUseCase
 import com.dmitrystonie.contactbook.contactlist.domain.usecase.GetRemoteContactsListUseCase
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,7 +18,6 @@ class ContactsListViewModel @Inject constructor(
     val state: LiveData<ContactsListScreenState> = _state
 
     fun loadContacts() {
-        Log.d("INFO-LIST", "loading contacts in viewmodel")
         if (_state.value is ContactsListScreenState.Loading || _state.value is ContactsListScreenState.Content) {
             return
         }
@@ -37,8 +33,7 @@ class ContactsListViewModel @Inject constructor(
         }
     }
 
-    fun loadRemoteContacts(){
-        Log.d("INFO-LIST", "loading contacts remote in viewmodel")
+    fun loadRemoteContacts() {
         if (_state.value is ContactsListScreenState.Loading) {
             return
         }

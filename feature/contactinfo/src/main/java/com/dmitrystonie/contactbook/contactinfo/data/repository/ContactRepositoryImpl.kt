@@ -5,6 +5,7 @@ import com.dmitrystonie.contactbook.contactinfo.data.datasource.ContactDataSourc
 import com.dmitrystonie.contactbook.contactinfo.domain.repository.ContactRepository
 import javax.inject.Inject
 
-class ContactRepositoryImpl @Inject() constructor(private val dataSource: ContactDataSource) : ContactRepository {
+class ContactRepositoryImpl @Inject() constructor(private val dataSource: ContactDataSource) :
+    ContactRepository {
     override suspend fun getContact(id: Long): Contact = dataSource.getContact(id)
 }

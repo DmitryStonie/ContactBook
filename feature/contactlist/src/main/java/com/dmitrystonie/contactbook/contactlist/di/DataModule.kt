@@ -26,6 +26,7 @@ interface DataModule {
                 dataSource = dataSource
             )
         }
+
         @Provides
         fun provideLocalContactRepositoryImpl(
             dataSource: LocalContactDataSource,
@@ -34,6 +35,7 @@ interface DataModule {
                 dataSource = dataSource
             )
         }
+
         @Provides
         fun provideContactService(
             retrofit: Retrofit

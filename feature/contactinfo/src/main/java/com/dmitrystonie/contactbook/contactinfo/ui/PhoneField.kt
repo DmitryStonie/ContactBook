@@ -41,7 +41,7 @@ fun PhoneField(
                 modifier = Modifier
                     .padding(end = 4.dp)
                     .size(40.dp),
-                onClick = {onPhoneClick(phone)},
+                onClick = { onPhoneClick(phone) },
                 colors = phoneActionColors,
                 iconPainter = painterResource(R.drawable.phone_icon),
                 iconDescription = stringResource(R.string.phone_action_description),
@@ -50,7 +50,7 @@ fun PhoneField(
                 modifier = Modifier
                     .padding(start = 4.dp)
                     .size(40.dp),
-                onClick = {onSmsClick(phone)},
+                onClick = { onSmsClick(phone) },
                 colors = smsActionColors,
                 iconPainter = painterResource(R.drawable.sms_icon),
                 iconDescription = stringResource(R.string.sms_action_description),
@@ -70,9 +70,6 @@ fun PhoneField(
 @Composable
 fun PhoneFieldPreview() {
     PhoneField(
-        phone = "7 936 273 92 73",
-        onPhoneClick = {},
-        onSmsClick = {},
-        subtitle = "Мобильный"
+        phone = "7 936 273 92 73", onPhoneClick = {}, onSmsClick = {}, subtitle = "Мобильный"
     )
 }

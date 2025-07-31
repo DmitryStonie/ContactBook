@@ -20,7 +20,11 @@ import com.dmitrystonie.contactbook.component.ui.R
 fun CircularImage(modifier: Modifier = Modifier, url: String?, description: String) {
     GlideImage(
         model = url, contentDescription = description,
-        modifier = modifier.clip(CircleShape).border(width = 2.dp, shape = CircleShape, color = MaterialTheme.colorScheme.outlineVariant),
+        modifier = modifier
+            .clip(CircleShape)
+            .border(
+                width = 2.dp, shape = CircleShape, color = MaterialTheme.colorScheme.outlineVariant
+            ),
         contentScale = ContentScale.Fit,
         loading = placeholder(R.drawable.contact),
         failure = placeholder(R.drawable.contact),
@@ -32,8 +36,6 @@ fun CircularImage(modifier: Modifier = Modifier, url: String?, description: Stri
 @Composable
 fun CircularImagePreview() {
     CircularImage(
-        url = null,
-        description = "Фото Иванов Иван Иванович",
-        modifier = Modifier.size(60.dp)
+        url = null, description = "Фото Иванов Иван Иванович", modifier = Modifier.size(60.dp)
     )
 }

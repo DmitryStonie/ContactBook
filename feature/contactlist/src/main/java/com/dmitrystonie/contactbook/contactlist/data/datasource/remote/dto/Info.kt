@@ -9,4 +9,4 @@ data class Info(
     val page: Int,
     val version: String,
 
-)
+    )

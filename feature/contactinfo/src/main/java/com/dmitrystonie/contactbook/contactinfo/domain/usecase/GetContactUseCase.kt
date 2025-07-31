@@ -6,4 +6,4 @@ import javax.inject.Inject
 
 class GetContactUseCase @Inject constructor(
     private val repository: ContactRepository,
-) : suspend (Long) -> Contact by { id: Long -> repository.getContact(id)}
+) : suspend (Long) -> Contact by { id: Long -> repository.getContact(id) }

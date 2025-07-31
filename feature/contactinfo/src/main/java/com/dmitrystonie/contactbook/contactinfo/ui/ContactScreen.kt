@@ -49,7 +49,7 @@ fun ContactScreen(
                 Log.d("INFO-CONTACT", "$currentState")
                 Column { }
             }
-    }
+        }
     }
 
 }

@@ -22,10 +22,7 @@ fun Contact.toContactEntity() = ContactEntity(
 )
 
 fun Coordinates.toCoordinatesEntity(contactId: Long) = CoordinatesEntity(
-    id = 0,
-    contactId = contactId,
-    latitude = this.latitude,
-    longitude = this.longitude
+    id = 0, contactId = contactId, latitude = this.latitude, longitude = this.longitude
 )
 
 fun Location.toLocationEntity(contactId: Long) = LocationEntity(
@@ -46,8 +43,5 @@ fun Picture.toPictureEntity(contactId: Long) = PictureEntity(
 )
 
 fun Street.toStreetEntity(contactId: Long) = StreetEntity(
-    id = 0,
-    contactId = contactId,
-    number = this.number,
-    name = this.name
+    id = 0, contactId = contactId, number = this.number, name = this.name
 )

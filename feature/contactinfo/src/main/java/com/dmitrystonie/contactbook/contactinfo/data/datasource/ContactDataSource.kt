@@ -16,7 +16,7 @@ class ContactDataSource @Inject constructor(
     private val pictureDao: PictureDao,
     private val streetDao: StreetDao
 ) {
-    suspend fun getContact(id: Long): Contact{
+    suspend fun getContact(id: Long): Contact {
         val contactEntity = contactDao.getById(id)
         val pictureEntity = pictureDao.getByContactId(contactEntity.id)
         val coordinatesEntity = coordinatesDao.getByContactId(contactEntity.id)

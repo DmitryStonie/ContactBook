@@ -17,7 +17,11 @@ import com.dmitrystonie.contactbook.ui.ActionButton
 import com.dmitrystonie.contactbook.ui.FieldWithIcon
 
 @Composable
-fun PlaceField(place: String, coordinates: Coordinates, onLocationClick: (latitude: String, longitude: String) -> Unit) {
+fun PlaceField(
+    place: String,
+    coordinates: Coordinates,
+    onLocationClick: (latitude: String, longitude: String) -> Unit
+) {
     val placeActionColors = ButtonColors(
         containerColor = PlaceActionColor,
         contentColor = ButtonContent,
@@ -27,14 +31,18 @@ fun PlaceField(place: String, coordinates: Coordinates, onLocationClick: (latitu
     val actions = @Composable {
         ActionButton(
             modifier = Modifier.size(40.dp),
-            onClick = {onLocationClick(coordinates.latitude, coordinates.longitude)},
+            onClick = { onLocationClick(coordinates.latitude, coordinates.longitude) },
             colors = placeActionColors,
             iconPainter = painterResource(R.drawable.place_icon),
             iconDescription = stringResource(R.string.place_action_description),
         )
     }
     FieldWithIcon(
-        modifier = Modifier.fillMaxWidth(), text = place, onClick = {}, actions = actions, maxLines = 3
+        modifier = Modifier.fillMaxWidth(),
+        text = place,
+        onClick = {},
+        actions = actions,
+        maxLines = 3
     )
 }
 
@@ -44,6 +52,6 @@ fun PlaceFieldPreview() {
     PlaceField(
         place = "1173, Højstrupvej",
         coordinates = Coordinates("12.234214", "74.913292"),
-        onLocationClick = { _,_ -> },
+        onLocationClick = { _, _ -> },
     )
 }

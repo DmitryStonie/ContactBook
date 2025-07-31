@@ -30,15 +30,10 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient,
-        converterFactory: Converter.Factory,
-        baseUrl: String
+        okHttpClient: OkHttpClient, converterFactory: Converter.Factory, baseUrl: String
     ): Retrofit {
-        return Retrofit.Builder()
-            .addConverterFactory(converterFactory)
-            .baseUrl(baseUrl)
-            .client(okHttpClient)
-            .build()
+        return Retrofit.Builder().addConverterFactory(converterFactory).baseUrl(baseUrl)
+            .client(okHttpClient).build()
     }
 
     @Singleton

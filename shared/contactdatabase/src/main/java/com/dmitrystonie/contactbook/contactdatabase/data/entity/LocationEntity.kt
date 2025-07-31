@@ -15,8 +15,7 @@ import androidx.room.PrimaryKey
     )],
 )
 data class LocationEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(name = CONTACT_ID_NAME, index = true) val contactId: Long,
     val city: String,
     val state: String,

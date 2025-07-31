@@ -30,9 +30,10 @@ class LocalContactDataSource @Inject constructor(
             streetDao.insert(contact.location.street.toStreetEntity(id))
         }
     }
-    suspend fun getContacts(): List<Contact>{
+
+    suspend fun getContacts(): List<Contact> {
         val contactEntities = contactDao.getAll()
-        return contactEntities.map{ contactEntity ->
+        return contactEntities.map { contactEntity ->
             val pictureEntity = pictureDao.getByContactId(contactEntity.id)
             val coordinatesEntity = coordinatesDao.getByContactId(contactEntity.id)
             val locationEntity = locationDao.getByContactId(contactEntity.id)
@@ -45,7 +46,8 @@ class LocalContactDataSource @Inject constructor(
             )
         }
     }
-    suspend fun deleteContacts(){
+
+    suspend fun deleteContacts() {
         val contactEntities = contactDao.getAll()
         contactEntities.forEach { contactEntity -> contactDao.delete(contactEntity) }
     }

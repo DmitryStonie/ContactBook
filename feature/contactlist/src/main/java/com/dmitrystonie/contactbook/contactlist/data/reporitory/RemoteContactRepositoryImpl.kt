@@ -6,9 +6,10 @@ import com.dmitrystonie.contactbook.contactlist.data.datasource.remote.RemoteCon
 import com.dmitrystonie.contactbook.contactlist.domain.repository.RemoteContactRepository
 import javax.inject.Inject
 
-class RemoteContactRepositoryImpl @Inject constructor(val dataSource: RemoteContactDataSource) : RemoteContactRepository {
+class RemoteContactRepositoryImpl @Inject constructor(private val dataSource: RemoteContactDataSource) :
+    RemoteContactRepository {
     override suspend fun getContacts(): List<Contact> {
         val response = dataSource.getContacts()
-        return response.results.map{ contactDto -> contactDto.toContact()}
+        return response.results.map { contactDto -> contactDto.toContact() }
     }
 }

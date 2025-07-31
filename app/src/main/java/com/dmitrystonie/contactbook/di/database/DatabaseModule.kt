@@ -18,8 +18,7 @@ class DatabaseModule {
             context,
             ContactDatabase::class.java,
             "app_database",
-        )
-            .build()
+        ).build()
     }
 
     @Provides

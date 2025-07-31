@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.core.net.toUri
 
 class SmsSender(private val context: Context) {
-    fun composeSmsMessage(phoneNumber: String) {
+    fun sendSmsMessage(phoneNumber: String) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = "smsto:$phoneNumber".toUri()
         }

@@ -14,15 +14,13 @@ interface PresentationModule {
     @Binds
     @IntoMap
     @ContactListViewModelKey(ContactsListViewModel::class)
-    fun bindContactsViewModel (contactsViewModel: ContactsListViewModel): ContactsListViewModel
+    fun bindContactsViewModel(contactsViewModel: ContactsListViewModel): ContactsListViewModel
 
 }
 
 @MustBeDocumented
 @Target(
-    AnnotationTarget.FUNCTION,
-    AnnotationTarget.PROPERTY_GETTER,
-    AnnotationTarget.PROPERTY_SETTER
+    AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER
 )
 @Retention(AnnotationRetention.RUNTIME)
 @MapKey

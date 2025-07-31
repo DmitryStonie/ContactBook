@@ -9,7 +9,7 @@ import com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Conta
 import com.dmitrystonie.contactbook.date.toBirthDate
 
 
-fun ContactDto.toContact(): Contact{
+fun ContactDto.toContact(): Contact {
     return Contact(
         id = 0,
         gender = this.gender,
@@ -23,7 +23,7 @@ fun ContactDto.toContact(): Contact{
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Location.toLocation(): Location{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Location.toLocation(): Location {
     return Location(
         street = street.toStreet(),
         city = city,
@@ -34,24 +34,20 @@ private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Coordinates.toCoordinates(): Coordinates{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Coordinates.toCoordinates(): Coordinates {
     return Coordinates(
-        latitude = latitude,
-        longitude = longitude
+        latitude = latitude, longitude = longitude
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Street.toStreet(): Street{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Street.toStreet(): Street {
     return Street(
-        number = number,
-        name = name
+        number = number, name = name
     )
 }
 
-private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Picture.toPicture(): Picture{
+private fun com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto.Picture.toPicture(): Picture {
     return Picture(
-        largeUrl = large,
-        mediumUrl = medium,
-        thumbnailUrl = thumbnail
+        largeUrl = large, mediumUrl = medium, thumbnailUrl = thumbnail
     )
 }

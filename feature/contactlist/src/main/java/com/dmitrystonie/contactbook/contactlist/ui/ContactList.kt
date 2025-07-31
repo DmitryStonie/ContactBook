@@ -19,9 +19,7 @@ import kotlin.collections.MutableList
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactList(
-    modifier: Modifier = Modifier,
-    contacts: List<Contact>,
-    onContactClick: (id: Long) -> Unit
+    modifier: Modifier = Modifier, contacts: List<Contact>, onContactClick: (id: Long) -> Unit
 ) {
     LazyColumn(modifier = modifier) {
         items(contacts) { contact ->

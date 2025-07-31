@@ -18,8 +18,7 @@ import com.dmitrystonie.leasingapp.component.ui.ProgressIndicator
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactListScreen(
-    onContactClick: (id: Long) -> Unit,
-    viewModel: ContactsListViewModel
+    onContactClick: (id: Long) -> Unit, viewModel: ContactsListViewModel
 ) {
     val state by viewModel.state.observeAsState()
 
@@ -28,8 +27,7 @@ fun ContactListScreen(
     }
     Column {
         TopBar(
-            onRefreshClick = {viewModel.loadRemoteContacts()}
-        )
+            onRefreshClick = { viewModel.loadRemoteContacts() })
         PullToRefreshBox(
             isRefreshing = state is ContactsListScreenState.Loading,
             onRefresh = { viewModel.loadRemoteContacts() },

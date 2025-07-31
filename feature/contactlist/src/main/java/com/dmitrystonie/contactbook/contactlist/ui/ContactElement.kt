@@ -17,15 +17,22 @@ import com.dmitrystonie.contactbook.component.ui.Title
 import com.dmitrystonie.contactbook.ui.CircularImage
 
 @Composable
-fun ContactElement(modifier: Modifier = Modifier, imageUrl: String? = null, name: String, location: String, phone: String){
-    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically, modifier = modifier
-        .padding(horizontal = 8.dp, vertical = 12.dp)){
+fun ContactElement(
+    modifier: Modifier = Modifier,
+    imageUrl: String? = null,
+    name: String,
+    location: String,
+    phone: String
+) {
+    Row(
+        horizontalArrangement = Arrangement.Start,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier.padding(horizontal = 8.dp, vertical = 12.dp)
+    ) {
         CircularImage(
-            modifier = Modifier.size(60.dp),
-            url = imageUrl,
-            description = name
+            modifier = Modifier.size(60.dp), url = imageUrl, description = name
         )
-        Column(horizontalAlignment = Alignment.Start, modifier = Modifier.padding(start = 16.dp)){
+        Column(horizontalAlignment = Alignment.Start, modifier = Modifier.padding(start = 16.dp)) {
             Title(
                 text = name,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -37,8 +44,7 @@ fun ContactElement(modifier: Modifier = Modifier, imageUrl: String? = null, name
                 modifier = Modifier.padding(bottom = 4.dp)
             )
             Text(
-                text = phone,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                text = phone, color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }
@@ -46,7 +52,7 @@ fun ContactElement(modifier: Modifier = Modifier, imageUrl: String? = null, name
 
 @Preview
 @Composable
-fun ContactElementPreview(){
+fun ContactElementPreview() {
     ContactElement(
         modifier = Modifier.width(600.dp),
         name = "Иванов Иван Иванович",

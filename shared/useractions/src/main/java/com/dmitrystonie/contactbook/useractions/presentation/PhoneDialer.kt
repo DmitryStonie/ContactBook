@@ -6,7 +6,7 @@ import android.net.Uri
 import androidx.core.net.toUri
 
 
-class PhoneDialer(private val context: Context){
+class PhoneDialer(private val context: Context) {
     fun dialPhoneNumber(phoneNumber: String) {
         val intent = Intent(Intent.ACTION_DIAL).apply {
             data = "tel:$phoneNumber".toUri()

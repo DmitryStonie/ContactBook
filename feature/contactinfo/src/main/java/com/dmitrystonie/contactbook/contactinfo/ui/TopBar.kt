@@ -8,7 +8,7 @@ import com.dmitrystonie.contactbook.feature.contactinfo.R
 import com.dmitrystonie.leasingapp.component.ui.TopAppBar
 
 @Composable
-fun TopBar(onBackClick: () -> Unit){
+fun TopBar(onBackClick: () -> Unit) {
     TopAppBar(
         icon = painterResource(R.drawable.ic_left),
         iconColor = MaterialTheme.colorScheme.onSurfaceVariant,

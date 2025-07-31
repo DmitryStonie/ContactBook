@@ -28,10 +28,13 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        contactListViewModelFactory = (applicationContext as ContactBookApplication).appComponent.contactListViewModelsFactory()
-        contactViewModelFactory = (applicationContext as ContactBookApplication).appComponent.contactViewModelsFactory()
+        contactListViewModelFactory =
+            (applicationContext as ContactBookApplication).appComponent.contactListViewModelsFactory()
+        contactViewModelFactory =
+            (applicationContext as ContactBookApplication).appComponent.contactViewModelsFactory()
 
-        contactsListViewModel = contactListViewModelFactory.create(ContactsListViewModel::class.java)
+        contactsListViewModel =
+            contactListViewModelFactory.create(ContactsListViewModel::class.java)
         contactViewModel = contactViewModelFactory.create(ContactViewModel::class.java)
 
         emailSender = EmailSender(this)
@@ -43,12 +46,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             ContactBookTheme {
                 MainScreen(
-                    contactsListViewModel, contactViewModel,
+                    contactsListViewModel,
+                    contactViewModel,
                     onEmailClick = { email -> emailSender.sendEmail(arrayOf(email)) },
-                    onPhoneClick = { phone -> phoneDialer.dialPhoneNumber(phone)},
-                    onSmsClick = {phone -> smsSender.composeSmsMessage(phone)},
-                    onLocationClick = {latitude, longitude -> locationLooker.showLocation(latitude, longitude)}
-                )
+                    onPhoneClick = { phone -> phoneDialer.dialPhoneNumber(phone) },
+                    onSmsClick = { phone -> smsSender.sendSmsMessage(phone) },
+                    onLocationClick = { latitude, longitude ->
+                        locationLooker.showLocation(
+                            latitude, longitude
+                        )
+                    })
             }
         }
     }

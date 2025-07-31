@@ -31,7 +31,13 @@ val textStyle = TextStyle(
 
 @Composable
 fun ErrorIndicator(modifier: Modifier = Modifier, message: String) {
-    Column (modifier = modifier.fillMaxSize().padding(horizontal = 120.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(horizontal = 120.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Image(
             modifier = Modifier.padding(horizontal = 30.dp),
             painter = painterResource(R.drawable.error_icon),

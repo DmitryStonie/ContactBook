@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.dmitrystonie.contactbook.contactdatabase.data.entity.ContactEntity.Companion.ID_COLUMN_NAME
 
 @Entity(
     tableName = CoordinatesEntity.TABLE_NAME,
@@ -16,10 +15,8 @@ import com.dmitrystonie.contactbook.contactdatabase.data.entity.ContactEntity.Co
     )],
 )
 data class CoordinatesEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
-    @ColumnInfo(name = CONTACT_ID_NAME, index = true)
-    val contactId: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
+    @ColumnInfo(name = CONTACT_ID_NAME, index = true) val contactId: Long,
     val latitude: String,
     val longitude: String,
 ) {

@@ -30,17 +30,20 @@ fun ContactInfo(
                 .weight(weight = 1f, fill = false)
         ) {
             ImageField(
-                name = contact.name,
-                imageUrl = contact.picture.largeUrl
+                name = contact.name, imageUrl = contact.picture.largeUrl
             )
 
             PhoneField(
-                phone = contact.phone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick,
+                phone = contact.phone,
+                onPhoneClick = onPhoneClick,
+                onSmsClick = onSmsClick,
                 subtitle = stringResource(R.string.mobile_phone_subtitle)
             )
 
             PhoneField(
-                phone = contact.cellphone, onPhoneClick = onPhoneClick, onSmsClick = onSmsClick,
+                phone = contact.cellphone,
+                onPhoneClick = onPhoneClick,
+                onSmsClick = onSmsClick,
                 subtitle = stringResource(R.string.cellphone_phone_subtitle)
             )
 
@@ -91,5 +94,5 @@ fun ContactInfoPreview() {
         onEmailClick = { },
         onPhoneClick = { },
         onSmsClick = {},
-        onLocationClick = {_,_->})
+        onLocationClick = { _, _ -> })
 }

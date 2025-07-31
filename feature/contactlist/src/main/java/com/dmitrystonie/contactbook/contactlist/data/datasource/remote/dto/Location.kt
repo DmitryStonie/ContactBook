@@ -3,7 +3,7 @@ package com.dmitrystonie.contactbook.contactlist.data.datasource.remote.dto
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Location (
+data class Location(
     val street: Street,
     val city: String,
     val state: String,

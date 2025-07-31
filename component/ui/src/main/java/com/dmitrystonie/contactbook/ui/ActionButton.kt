@@ -18,7 +18,13 @@ import com.dmitrystonie.contactbook.component.theme.PlaceActionColor
 import com.dmitrystonie.contactbook.component.ui.R
 
 @Composable
-fun ActionButton(modifier: Modifier = Modifier, onClick: () -> Unit, colors: ButtonColors, iconPainter: Painter, iconDescription: String) {
+fun ActionButton(
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit,
+    colors: ButtonColors,
+    iconPainter: Painter,
+    iconDescription: String
+) {
     Button(
         onClick = onClick,
         modifier = modifier,
@@ -31,8 +37,7 @@ fun ActionButton(modifier: Modifier = Modifier, onClick: () -> Unit, colors: But
                 contentDescription = iconDescription,
                 modifier = Modifier.fillMaxSize()
             )
-        }
-    )
+        })
 }
 
 @Preview

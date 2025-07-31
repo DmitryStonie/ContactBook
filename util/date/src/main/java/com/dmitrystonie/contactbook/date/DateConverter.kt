@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-fun String.toBirthDate(): String{
+fun String.toBirthDate(): String {
     val dtStart = "2010-10-15T09:27:37Z"
     val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US)
     val resultFormat = SimpleDateFormat("dd.MM.yyyy", Locale.US)

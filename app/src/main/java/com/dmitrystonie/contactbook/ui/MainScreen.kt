@@ -1,6 +1,5 @@
 package com.dmitrystonie.contactbook.ui
 
-import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -35,18 +34,15 @@ fun MainScreen(
             startDestination = ContactListRoute,
         ) {
             composable<ContactListRoute> {
-                Log.d("INFO_APP", "creating contactlist viewmodel $contactsListViewModel")
                 ContactListScreen(
                     onContactClick = { contactId ->
                         navController.navigate(ContactRoute(contactId))
-                    },
-                    viewModel = contactsListViewModel
+                    }, viewModel = contactsListViewModel
 
                 )
             }
             composable<ContactRoute> {
                 val destination = it.toRoute<ContactRoute>()
-                Log.d("INFO_APP", "creating contact viewmodel $contactViewModel")
                 ContactScreen(
                     onBackClick = { navController.navigateUp() },
                     viewModel = contactViewModel,

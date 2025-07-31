@@ -4,6 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Birthday(
-    val date: String,
-    val age: Int
+    val date: String, val age: Int
 )
