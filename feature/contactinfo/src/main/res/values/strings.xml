@@ -6,4 +6,5 @@
     <string name="topbar_back_icon_description">Back</string>
     <string name="mobile_phone_subtitle">Mobile</string>
     <string name="cellphone_phone_subtitle">Cellphone</string>
+    <string name="birthday_subtitle">Birthday</string>
 </resources>

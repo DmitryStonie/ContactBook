@@ -47,6 +47,10 @@ fun ContactInfo(
                 coordinates = contact.location.coordinates,
             )
 
+            BirthdayField(
+                text = contact.birthday
+            )
+
         }
     }
 }
